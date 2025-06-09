@@ -6,8 +6,21 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactEmail } from "@/lib/emailjs";
 
@@ -15,7 +28,7 @@ const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   subject: z.string().min(1, "Please select a subject"),
-  message: z.string().min(10, "Message must be at least 10 characters")
+  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
@@ -31,8 +44,8 @@ export default function SignalToSkies() {
       name: "",
       email: "",
       subject: "",
-      message: ""
-    }
+      message: "",
+    },
   });
 
   const onSubmit = async (data: ContactForm) => {
@@ -48,7 +61,7 @@ export default function SignalToSkies() {
       toast({
         title: "Failed to send message",
         description: "Please try again or contact me directly via email.",
-        variant: "destructive"
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -56,67 +69,80 @@ export default function SignalToSkies() {
   };
 
   const contactLinks = [
-    { icon: "fas fa-envelope", label: "Email", href: "mailto:contact@peregrine.dev" },
-    { icon: "fab fa-linkedin", label: "LinkedIn", href: "https://linkedin.com/in/peregrine" },
-    { icon: "fab fa-github", label: "GitHub", href: "https://github.com/peregrine" },
-    { icon: "fab fa-twitter", label: "Twitter", href: "https://twitter.com/peregrine" }
+    {
+      icon: "fas fa-envelope",
+      label: "Email",
+      href: "mailto:gouravsapaliga125@gmail.com",
+    },
+    {
+      icon: "fab fa-linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/gourav-sapaliga",
+    },
+    {
+      icon: "fab fa-github",
+      label: "GitHub",
+      href: "https://github.com/shadowofdominance",
+    },
+    {
+      icon: "fab fa-twitter",
+      label: "Twitter",
+      href: "https://twitter.com/not_gourav007",
+    },
   ];
 
   return (
     <section id="signal" className="min-h-screen py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-falcon-storm to-falcon-night"></div>
-      
+
       {/* Animated feathers floating */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          className="absolute top-1/4 left-1/4 opacity-30"
-          animate={{ y: [0, -20, 20, 0], rotate: [0, 360] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <i className="fas fa-feather text-falcon-sky text-2xl"></i>
-        </motion.div>
-        <motion.div 
-          className="absolute top-1/3 right-1/3 opacity-20"
-          animate={{ y: [0, -20, 20, 0], rotate: [0, 360] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        >
-          <i className="fas fa-feather text-falcon-sky text-lg"></i>
-        </motion.div>
-        <motion.div 
+        <motion.div
           className="absolute bottom-1/4 left-1/2 opacity-25"
           animate={{ y: [0, -20, 20, 0], rotate: [0, 360] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4,
+          }}
         >
           <i className="fas fa-feather text-falcon-sky text-xl"></i>
         </motion.div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-falcon-cloud"
             initial={{ opacity: 1 }}
-            whileInView={{ 
+            whileInView={{
               opacity: 1,
-              transition: { 
+              transition: {
                 duration: 0.1,
-                onComplete: () => setIsAnimated(true)
-              }
+                onComplete: () => setIsAnimated(true),
+              },
             }}
             viewport={{ once: true }}
           >
-            <div className={`talon-scratch-container ${isAnimated ? 'talon-scratch-active' : ''}`}>
+            <div
+              className={`talon-scratch-container ${
+                isAnimated ? "talon-scratch-active" : ""
+              }`}
+            >
               <div className="talon-scratch-overlay"></div>
               <div className="talon-impact-flash"></div>
-              <span className="talon-hidden relative z-1">SIGNAL TO THE SKIES</span>
+              <span className="talon-hidden relative z-1">
+                SIGNAL TO THE SKIES
+              </span>
             </div>
-            <motion.span 
+            <motion.span
               className="block text-2xl text-falcon-steel font-inter font-normal mt-2"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +152,7 @@ export default function SignalToSkies() {
               Send a message to the aerie
             </motion.span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-falcon-sky mx-auto"
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
@@ -135,7 +161,7 @@ export default function SignalToSkies() {
           ></motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="glass-effect rounded-xl p-8 md:p-12"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -150,9 +176,11 @@ export default function SignalToSkies() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-falcon-cloud font-semibold">Name</FormLabel>
+                      <FormLabel className="text-falcon-cloud font-semibold">
+                        Name
+                      </FormLabel>
                       <FormControl>
-                        <Input 
+                        <Input
                           {...field}
                           placeholder="Your name"
                           className="bg-falcon-storm border-falcon-steel text-falcon-cloud cursor-feather focus:border-falcon-sky"
@@ -162,15 +190,17 @@ export default function SignalToSkies() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-falcon-cloud font-semibold">Email</FormLabel>
+                      <FormLabel className="text-falcon-cloud font-semibold">
+                        Email
+                      </FormLabel>
                       <FormControl>
-                        <Input 
+                        <Input
                           {...field}
                           type="email"
                           placeholder="your.email@domain.com"
@@ -188,17 +218,26 @@ export default function SignalToSkies() {
                 name="subject"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-falcon-cloud font-semibold">Subject</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormLabel className="text-falcon-cloud font-semibold">
+                      Subject
+                    </FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <FormControl>
                         <SelectTrigger className="bg-falcon-storm border-falcon-steel text-falcon-cloud cursor-feather focus:border-falcon-sky">
                           <SelectValue placeholder="Select a topic" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="collaboration">Project Collaboration</SelectItem>
+                        <SelectItem value="collaboration">
+                          Project Collaboration
+                        </SelectItem>
                         <SelectItem value="hiring">Hiring Inquiry</SelectItem>
-                        <SelectItem value="speaking">Speaking Engagement</SelectItem>
+                        <SelectItem value="speaking">
+                          Speaking Engagement
+                        </SelectItem>
                         <SelectItem value="mentorship">Mentorship</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
@@ -213,9 +252,11 @@ export default function SignalToSkies() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-falcon-cloud font-semibold">Message</FormLabel>
+                    <FormLabel className="text-falcon-cloud font-semibold">
+                      Message
+                    </FormLabel>
                     <FormControl>
-                      <Textarea 
+                      <Textarea
                         {...field}
                         rows={6}
                         placeholder="Share your thoughts, ideas, or project details..."
@@ -257,8 +298,12 @@ export default function SignalToSkies() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <i className={`${link.icon} text-falcon-sky group-hover:text-white`}></i>
-                  <span className="text-falcon-cloud group-hover:text-white">{link.label}</span>
+                  <i
+                    className={`${link.icon} text-falcon-sky group-hover:text-white`}
+                  ></i>
+                  <span className="text-falcon-cloud group-hover:text-white">
+                    {link.label}
+                  </span>
                 </motion.a>
               ))}
             </div>

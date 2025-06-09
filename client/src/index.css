@@ -63,9 +63,10 @@
   }
 
   body {
-    @apply font-inter antialiased bg-falcon-night text-falcon-cloud overflow-x-hidden;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2360A5FA" d="M7.5 3L1 9.5l2.5 2.5 2-2 6.5 6.5L14.5 14l-6.5-6.5 2-2L7.5 3z"/></svg>'), auto;
-  }
+  @apply font-inter antialiased bg-falcon-night text-falcon-cloud overflow-x-hidden;
+  cursor: url('/images/cursor.png') 0 48, auto;
+}
+
 
   .font-orbitron {
     font-family: 'Orbitron', monospace;
@@ -78,7 +79,7 @@
 
 @layer utilities {
   .cursor-feather {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%2360A5FA" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>'), pointer;
+    cursor: url('/images/cursor.png') 0 48, pointer;
   }
 
   .bg-falcon-night {

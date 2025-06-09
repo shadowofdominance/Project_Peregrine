@@ -165,27 +165,21 @@ export default function LaunchPoint() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Falcon Silhouette */}
-        <motion.div
-          className="mb-12 relative z-20"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <img
-            src="/images/profilepic.jpg"
-            alt="Peregrine falcon silhouette"
-            className="w-32 h-32 md:w-48 md:h-48 mx-auto rounded-full object-cover border-4 border-falcon-sky shadow-2xl animate-pulse-glow"
-          />
-        </motion.div>
-
+        <img
+          src="/images/profilepic.jpg"
+          alt="Peregrine falcon silhouette"
+          className="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full object-center border-4 border-falcon-sky"
+        />
+        <br />
         <motion.h1
           className="font-orbitron font-black text-6xl md:text-8xl mb-6 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <span className="block text-falcon-cloud">I AM THE</span>
+          <span className="block text-6xl text-falcon-cloud">HEIR TO THE</span>
           <span className="block text-falcon-sky bg-gradient-to-r from-falcon-blue to-falcon-sky bg-clip-text text-transparent">
-            PEREGRINE
+            SKY'S EDGE
           </span>
         </motion.h1>
 
@@ -220,14 +214,14 @@ export default function LaunchPoint() {
           <i className="fas fa-chevron-down ml-3 group-hover:animate-bounce"></i>
         </motion.button>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <i className="fas fa-chevron-down text-falcon-sky text-2xl"></i>
-        </motion.div>
+        </motion.div>*/}
       </div>
     </section>
   );

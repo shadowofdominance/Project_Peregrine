@@ -32,7 +32,7 @@ export default function NestView() {
         className="absolute inset-0 parallax-bg"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
+            "linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/nestview.jpg')",
         }}
       />
 
@@ -153,21 +153,21 @@ export default function NestView() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
-              alt="Professional portrait"
-              className="w-full h-64 object-cover rounded-xl shadow-2xl"
+              src="images\IMG-20240705-WA0013.jpg"
+              alt="Team Collaboration"
+              className="w-full h-70 object-center rounded-xl shadow-2xl"
             />
 
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=200"
+                src="/images/teamcollab.jpg"
                 alt="Team collaboration"
-                className="w-full h-32 object-cover rounded-lg"
+                className="w-full h-35 object-center rounded-lg"
               />
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=200"
-                alt="Development workspace"
-                className="w-full h-32 object-cover rounded-lg"
+                src="/images/evogen1.jpg"
+                alt="Team Collaboration"
+                className="w-full h-35 object-center rounded-lg"
               />
             </div>
 

@@ -8,43 +8,47 @@ export default function DiveMode() {
   return (
     <section id="dive" className="min-h-screen py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-falcon-night to-falcon-storm"></div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-falcon-cloud"
             initial={{ opacity: 1 }}
-            whileInView={{ 
+            whileInView={{
               opacity: 1,
-              transition: { 
+              transition: {
                 duration: 0.1,
-                onComplete: () => setIsAnimated(true)
-              }
+                onComplete: () => setIsAnimated(true),
+              },
             }}
             viewport={{ once: true }}
           >
-            <div className={`talon-scratch-container ${isAnimated ? 'talon-scratch-active' : ''}`}>
+            <div
+              className={`talon-scratch-container ${
+                isAnimated ? "talon-scratch-active" : ""
+              }`}
+            >
               <div className="talon-scratch-overlay"></div>
               <div className="talon-impact-flash"></div>
               <span className="talon-hidden relative z-1">DIVE MODE</span>
             </div>
-            <motion.span 
+            <motion.span
               className="block text-2xl text-falcon-steel font-inter font-normal mt-2"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5 }}
               viewport={{ once: true }}
             >
-              Game Development Arsenal
+              Project Arsenal
             </motion.span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-falcon-sky mx-auto"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -64,7 +68,7 @@ export default function DiveMode() {
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
             >
-              <img 
+              <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
@@ -78,7 +82,7 @@ export default function DiveMode() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="px-3 py-1 bg-falcon-blue/20 text-falcon-sky text-xs rounded-full"
                     >
@@ -87,14 +91,14 @@ export default function DiveMode() {
                   ))}
                 </div>
                 <div className="flex space-x-3 pt-2">
-                  <a 
+                  <a
                     href={project.demoUrl}
                     className="flex items-center space-x-2 text-falcon-sky hover:text-falcon-cloud transition-colors cursor-feather"
                   >
                     <i className="fas fa-play"></i>
                     <span>Demo</span>
                   </a>
-                  <a 
+                  <a
                     href={project.codeUrl}
                     className="flex items-center space-x-2 text-falcon-sky hover:text-falcon-cloud transition-colors cursor-feather"
                   >
@@ -107,7 +111,7 @@ export default function DiveMode() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

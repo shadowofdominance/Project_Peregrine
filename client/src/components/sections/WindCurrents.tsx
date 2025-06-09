@@ -11,9 +11,9 @@ export default function WindCurrents() {
       className="min-h-screen py-20 relative overflow-hidden"
     >
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-10 parallax-bg"
         style={{
-          backgroundImage: "url('/images/wallhaven-x11ql3.jpg')",
+          backgroundImage: "url('/images/windcurrents2.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -97,7 +97,7 @@ export default function WindCurrents() {
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full md:w-64 h-40 object-cover rounded-lg"
+                    className="w-full md:w-64 h-40 object-center rounded-lg"
                   />
                   <div className="flex-1">
                     <div className="flex items-center space-x-4 mb-3">

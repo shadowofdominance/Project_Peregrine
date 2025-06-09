@@ -35,8 +35,8 @@ export const projects: Project[] = [
     codeUrl: "#"
   },
   {
-    id: "neon-velocity",
-    title: "Neon Velocity",
+    id: "medai",
+    title: "MedAI",
     description: "High-speed cyberpunk racing game featuring adaptive AI opponents and customizable vehicles.",
     image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     technologies: ["Unreal Engine", "Blueprint", "AI"],
@@ -57,11 +57,11 @@ export const projects: Project[] = [
 export const events: Event[] = [
   {
     id: "techsoar-2023",
-    title: "TechSoar 2023",
-    role: "Event Director",
+    title: "Evogen 2025",
+    role: "Event Head-Cybersecurity",
     description: "Led a 500+ attendee technology conference featuring industry leaders and emerging tech trends. Coordinated 12 speakers, managed logistics, and achieved 95% satisfaction rating.",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
-    stats: ["500+ Attendees", "12 Speakers", "95% Satisfaction"]
+    image: "/images/evogen2.jpg",
+    stats: ["50+ Participants", "2 Judges", "90% Satisfaction"]
   },
   {
     id: "game-dev-championship",
@@ -73,11 +73,11 @@ export const events: Event[] = [
   },
   {
     id: "code-flight-workshop",
-    title: "Code Flight Workshop Series",
-    role: "Workshop Lead",
+    title: "Team Bounters Belgavi",
+    role: "Workshop Speaker and an Organizer",
     description: "Created and delivered monthly programming workshops for beginners, covering game development fundamentals and industry best practices. Maintained 90% completion rate.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
-    stats: ["12 Sessions", "150+ Students", "90% Completion"]
+    image: "/images/teambounters.jpg",
+    stats: ["2 Sessions", "30+ Students", "90% Completion"]
   }
 ];
 
@@ -109,12 +109,9 @@ export const achievements: Achievement[] = [
 ];
 
 export const skills: string[] = [
-  "Unity",
+  "C++",
   "Unreal Engine",
-  "React",
-  "Three.js",
   "C#",
-  "JavaScript",
-  "Python",
-  "Blender"
+  "Cyber Security",
+  "Blender",
 ];
